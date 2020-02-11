@@ -20,6 +20,11 @@ SKIP_DEPLOY_TESTS = (RUNNING_ON_CI and RUNNING_TEST_FOR_MASTER_ON_CI) or (not RU
 CFN_SLEEP = 3
 TIMEOUT = 300
 
+print(f"Running on CI: {RUNNING_ON_CI}")
+print(f"Running test for master on CI: {RUNNING_TEST_FOR_MASTER_ON_CI}")
+print(f"Run by canary: {RUN_BY_CANARY}")
+print(f"Skip deploy test: {SKIP_DEPLOY_TESTS}")
+
 
 @skipIf(SKIP_DEPLOY_TESTS, "Skip deploy tests in CI/CD only")
 class TestDeploy(PackageIntegBase, DeployIntegBase):
