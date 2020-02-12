@@ -26,6 +26,10 @@ print(f"Run by canary: {RUN_BY_CANARY}")
 print(f"Skip deploy test: {SKIP_DEPLOY_TESTS}")
 
 
+def test_fail():
+    assert 1 == 2
+
+
 @skipIf(SKIP_DEPLOY_TESTS, "Skip deploy tests in CI/CD only")
 class TestDeploy(PackageIntegBase, DeployIntegBase):
     def setUp(self):
