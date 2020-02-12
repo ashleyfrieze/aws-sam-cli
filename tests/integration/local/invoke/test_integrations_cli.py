@@ -17,7 +17,7 @@ from tests.testing_utils import IS_WINDOWS, RUNNING_ON_CI, RUNNING_TEST_FOR_MAST
 
 # Layers tests require credentials and Travis will only add credentials to the env if the PR is from the same repo.
 # This is to restrict layers tests to run outside of Travis and when the branch is not master.
-SKIP_LAYERS_TESTS = (RUNNING_ON_CI and RUNNING_TEST_FOR_MASTER_ON_CI) or (not RUN_BY_CANARY)
+SKIP_LAYERS_TESTS = (RUNNING_ON_CI and RUNNING_TEST_FOR_MASTER_ON_CI) and (not RUN_BY_CANARY)
 
 from pathlib import Path
 

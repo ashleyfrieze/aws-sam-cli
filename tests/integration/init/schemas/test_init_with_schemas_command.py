@@ -10,7 +10,7 @@ from tests.integration.init.schemas.schemas_test_data_setup import SchemaTestDat
 from tests.testing_utils import RUNNING_ON_CI, RUNNING_TEST_FOR_MASTER_ON_CI, RUN_BY_CANARY
 
 # Schemas tests require credentials. This is to skip running the test where credentials are not available.
-SKIP_SCHEMA_TESTS = (RUNNING_ON_CI and RUNNING_TEST_FOR_MASTER_ON_CI) or (not RUN_BY_CANARY)
+SKIP_SCHEMA_TESTS = (RUNNING_ON_CI and RUNNING_TEST_FOR_MASTER_ON_CI) and (not RUN_BY_CANARY)
 
 
 @skipIf(SKIP_SCHEMA_TESTS, "Skip schema test")
