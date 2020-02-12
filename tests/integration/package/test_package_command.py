@@ -9,7 +9,7 @@ from tests.testing_utils import RUNNING_ON_CI, RUNNING_TEST_FOR_MASTER_ON_CI, RU
 
 # Package tests require credentials and CI/CD will only add credentials to the env if the PR is from the same repo.
 # This is to restrict package tests to run outside of CI/CD and when the branch is not master.
-SKIP_PACKAGE_TESTS = (RUNNING_ON_CI and RUNNING_TEST_FOR_MASTER_ON_CI) or (not RUN_BY_CANARY)
+SKIP_PACKAGE_TESTS = (RUNNING_ON_CI and RUNNING_TEST_FOR_MASTER_ON_CI) and (not RUN_BY_CANARY)
 TIMEOUT = 300
 
 
