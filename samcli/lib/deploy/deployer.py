@@ -401,7 +401,8 @@ class Deployer:
             raise deploy_exceptions.DeployFailedError(stack_name=stack_name, msg=str(ex))
 
         outputs = self.get_stack_outputs(stack_name=stack_name, echo=False)
-        self._stack_outputs(outputs)
+        if outputs:
+            self._stack_outputs(outputs)
 
     def create_and_wait_for_changeset(
         self, stack_name, cfn_template, parameter_values, capabilities, role_arn, notification_arns, s3_uploader, tags
