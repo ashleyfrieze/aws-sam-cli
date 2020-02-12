@@ -21,14 +21,6 @@ CFN_SLEEP = 3
 TIMEOUT = 300
 
 
-def test_fail():
-    print(f"Running on CI: {RUNNING_ON_CI}")
-    print(f"Running test for master on CI: {RUNNING_TEST_FOR_MASTER_ON_CI}")
-    print(f"Run by canary: {RUN_BY_CANARY}")
-    print(f"Skip deploy test: {SKIP_DEPLOY_TESTS}")
-    assert 1 == 2
-
-
 @skipIf(SKIP_DEPLOY_TESTS, "Skip deploy tests in CI/CD only")
 class TestDeploy(PackageIntegBase, DeployIntegBase):
     def setUp(self):
