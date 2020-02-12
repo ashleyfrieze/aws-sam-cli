@@ -155,7 +155,7 @@ class LambdaOutputParser:
             # the keys 'errorMessage' and 'errorType'.
             if (
                 isinstance(lambda_response_dict, dict)
-                and len(lambda_response_dict) in [2, 3]
+                and len(lambda_response_dict) in [2, 3, 4]
                 and "errorMessage" in lambda_response_dict
                 and "errorType" in lambda_response_dict
             ):
